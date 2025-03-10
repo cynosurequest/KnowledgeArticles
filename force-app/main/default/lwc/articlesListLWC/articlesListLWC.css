@@ -1,0 +1,71 @@
+/* Grid container for article tiles */
+.slds-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 1rem;
+    padding: 25px 0;
+    width: 1500px;
+    height: 200px;
+}
+
+/* Article tile wrapper */
+.article-tile-wrapper,
+.create-article-tile-wrapper {
+    flex: 0 1 435px;
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Shared styles for article and create article tiles */
+.article-tile,
+.create-article-tile {
+    width: 435px;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem;
+    border: 1px solid #d8dde6;
+    border-radius: 0.25rem;
+    background-color: #f4f6f9;
+    font-size: medium;
+    font-weight: 400;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effects for article tiles */
+.article-tile:hover,
+.create-article-tile:hover {
+    background-color: #68BA7F;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Create article tile specific styles */
+.create-article-tile {
+    background-color: #CFFFDC;
+    cursor: pointer;
+}
+
+/* Title inside article tile */
+.article-title {
+    font-size: medium;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+}
+
+/* Article icons container */
+.article-icons {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-end;
+}
+
+/* Icon styling */
+.icon-style {
+    cursor: pointer;
+    padding: 0;
+}

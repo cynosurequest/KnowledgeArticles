@@ -1,0 +1,20 @@
+.grey-background {
+    background-color: #f3f3f3; 
+    padding: 1rem; 
+    border-radius: 0.25rem;
+    transition: background-color 0.3s; 
+}
+
+.tile-title {
+    font-size: 1.5rem; 
+    font-weight: bold; 
+    color: #333; 
+    text-align: center;
+}
+.grey-background:hover {
+    background-color: #e0e0e0; /* New color on hover */
+}
+.slds-grid {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}

@@ -1,0 +1,47 @@
+.grey-background {
+    background-color: #f3f3f3;
+    padding: 1rem; 
+    border-radius: 0.25rem;
+    transition: background-color 0.3s; 
+}
+
+.slds-modal{
+    height: 90vh;
+    max-height: 190vh;
+}
+
+.slds-modal__header{
+    background:#16325c;
+}
+.slds-modal__footer{
+    background:#16325c;
+}
+
+.lwcContent{
+background:#f6f6f7;
+}
+
+.slds-modal__container {
+    /* width: 1400px; */
+    height: 700px; 
+    padding-top: 200px;
+    padding-bottom:200px;
+    display: flex; /* Flex layout for inner content alignment */
+    flex-direction: column; /* Stack header, content, and footer */
+    border-radius: 10px; /* Smooth corners */
+    overflow: hidden; /* Avoid content overflow */
+}
+
+.tile-title {
+    font-size: 1.5rem; 
+    font-weight: bold; 
+    color: #333; 
+    text-align: center;
+}
+.grey-background:hover {
+    background-color: #e0e0e0;
+}
+
+.languageSelector {
+    background-color: #ffffff;
+}

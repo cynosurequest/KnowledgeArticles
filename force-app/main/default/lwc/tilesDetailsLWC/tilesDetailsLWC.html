@@ -1,0 +1,27 @@
+<template>
+    <lightning-card>
+        <div class="slds-grid slds-wrap">
+            <div class="slds-col slds-size_1-of-3">
+                <article class="slds-tile slds-tile_board slds-m-around_small grey-background">
+                    <h3 class="slds-tile__title slds-truncate tile-title">
+                        <a href="javascript:void(0);" data-status="Published" onclick={handleStatusClick}>Published</a>
+                    </h3>
+                </article>
+            </div>
+            <div class="slds-col slds-size_1-of-3">
+                <article class="slds-tile slds-tile_board slds-m-around_small grey-background">
+                    <h3 class="slds-tile__title slds-truncate tile-title">
+                        <a href="javascript:void(0);" data-status="Draft" onclick={handleStatusClick}>Draft</a>
+                    </h3>
+                </article>
+            </div>
+            <div class="slds-col slds-size_1-of-3">
+                <article class="slds-tile slds-tile_board slds-m-around_small grey-background">
+                    <h3 class="slds-tile__title slds-truncate tile-title">
+                        <a href="javascript:void(0);" data-status="Archived" onclick={handleStatusClick}>Archived</a>
+                    </h3>
+                </article>
+            </div>
+        </div>
+    </lightning-card>
+</template>

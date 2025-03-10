@@ -1,0 +1,60 @@
+<template>
+   <div>
+      <lightning-layout multiple-rows>
+         <template for:each={receivedCategory} for:item="category" for:index="index">
+            <lightning-layout-item key={category} class="slds-col slds-size_1-of-4 slds-p-around_small">
+               <article class="slds-tile slds-tile_board slds-m-around_small grey-background">
+                  <h3 class="slds-tile__title slds-truncate tile-title" title="Child Categories">
+                     <a href="javascript:void(0);" data-child={category} onclick={navigateToDetailsPage}>
+                     {category}
+                     </a>
+                  </h3>
+               </article>
+            </lightning-layout-item>
+         </template>
+      </lightning-layout>
+
+      <!-- Background Overlay when Modal is Open -->
+      <template if:true={isPrimaryModal}>
+        <div class="slds-backdrop slds-backdrop_open">
+            <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open slds-modal_large" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1">
+               <div class="slds-modal__container">
+                  <header class="slds-modal__header">
+                     <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={hideModalBoxCancel}>
+                        <lightning-icon icon-name="utility:close" alternative-text="close" variant="inverse" size="small"></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                     </button>
+                     <h2 id="modal-heading" class="slds-text-color_inverse slds-text-heading_medium slds-hyphenate">
+                        {modalHeader}
+                     </h2>
+                  </header>
+                  <div class = "languageSelector">
+                     <template if:true={isShowLanguages}>
+                        <c-articles-language-selector onlanguagecustomevent={handleLanguage}></c-articles-language-selector>
+                     </template>
+                  </div>
+                  <div class ="lwcContent">
+                     <template if:true={isShowModal}>
+                        <c-tiles-details-l-w-c child={selectedChildCategory} onarticlescustomevent={handleCustomEvent}></c-tiles-details-l-w-c>
+                     </template>
+                     <template if:true={isShowModalSecond}>
+                        <c-articles-list-l-w-c label={label} language={selectedLanguage} child={selectedChildCategory} status={selectedStatus}></c-articles-list-l-w-c>
+                     </template>
+                  </div>
+                  <footer class="slds-modal__footer">
+                     <template if:true={isShowLanguages}>
+                        <button class="slds-button slds-button_brand" onclick={onHandleNextStatus}>Next</button>
+                     </template>
+                     <template if:true={isShowModal}>
+                        <button class="slds-button slds-button_brand" onclick={onHandleBackStatus}>Back</button>
+                     </template>
+                     <template if:true={isShowModalSecond}>
+                        <button class="slds-button slds-button_brand" onclick={onHandleBack}>Back</button>
+                     </template>
+                  </footer>
+               </div>
+            </section>
+        </div>
+      </template>
+   </div>
+</template>

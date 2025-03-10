@@ -1,0 +1,24 @@
+<template>
+    <lightning-card>
+        <template for:each={categoryOptions} for:item="categories">
+            <div key={categories.Id} class="article-tile-wrapper">
+                <lightning-layout-item size="6">
+                    <article class={categories.className}>
+                        <h3 class="slds-tile__title slds-truncate tile-title" title="Main Categories">
+                            <a href="javascript:void(0);" data-label={categories.label} onclick={handleCategoryClick}>
+                                {categories.label}
+                            </a>
+                        </h3>
+                    </article>
+                    
+                    <template if:true={categories.isSelected}>
+                        <c-active-sub-categories
+                            label={selectedDataCategory} 
+                            received-category={categoryNames}>
+                        </c-active-sub-categories>
+                    </template>
+                </lightning-layout-item>
+            </div>
+        </template>
+    </lightning-card>
+</template>

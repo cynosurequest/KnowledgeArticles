@@ -1,0 +1,45 @@
+<template>
+        <lightning-card>
+            <div class="slds-p-around_medium">
+                <div class="slds-grid slds-wrap slds-scrollable_y"  tabindex="0">
+                    
+                    <template for:each={processedArticles} for:item="article" for:index="index">
+                        <div key={article.Id} class="article-tile-wrapper">
+                            <template if:false={article.isCreateTile}>
+                                <div class="grey-background slds-m-bottom_small article-tile">
+                                    <div class="article-title">
+                                        <span>{article.Title}</span>
+                                    </div>
+                                    <div class="article-icons">
+                                        <lightning-button-icon icon-name="utility:edit" size="small" variant="border-filled"
+                                            alternative-text="Edit" class="icon-style"
+                                            data-id={article.Id} onclick={handleEditClick}>
+                                        </lightning-button-icon>
+                                        <lightning-button-icon icon-name="utility:preview" size="small" variant="border-filled"
+                                            alternative-text="View" class="icon-style"
+                                            data-id={article.Id} onclick={handleViewClick}>
+                                        </lightning-button-icon>
+                                        <template if:true={article.showDeleteButton}>
+                                            <lightning-button-icon icon-name="utility:delete" size="small" variant="border-filled"
+                                                alternative-text="Delete" class="icon-style"
+                                                data-id={article.Id} onclick={handleDeleteClick}>
+                                            </lightning-button-icon>
+                                        </template>
+                                    </div>
+                                </div>
+                            </template>
+                            <template if:true={article.isCreateTile}>
+                                <div class="create-article-tile-wrapper">
+                                    <div class="create-article-tile" onclick={handleCreateClick}>
+                                        <span>Create an article</span>
+                                        <lightning-button-icon icon-name="utility:add" size="small" class="icon-style"></lightning-button-icon>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                    </template>
+
+                </div>
+            </div>
+        </lightning-card>
+    </template>
